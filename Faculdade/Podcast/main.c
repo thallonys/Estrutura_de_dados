@@ -13,16 +13,22 @@ typedef struct lista {
     No *fim;
 } Lista;
 
-void inserirPod(Lista ** lista, char nome[]);
+void limpaTela();
+void inserirPod(Lista **lista, char nome[]);
 // void mostrar();
 
 int main(void)
 {
     setlocale(LC_ALL, "Portuguese");
 
-    Lista * inicio = NULL;
+    Lista lista, *inicio;
+    inicio = &lista;
+    // inicio = NULL;
+
     char nome[64] = {0};
     int opcao = 0; 
+
+    limpaTela();
 
     do
     {
@@ -31,31 +37,44 @@ int main(void)
             "2 - Mostrar Podcast\t"
             "3 - Sair\n");
 
-        printf("Qual opùùo vocù deseja?\nDigite aqui: ");
+        printf("Qual opÁ„o vocÍ deseja?\n"
+                "Digite aqui: ");
         scanf("%d", &opcao);
 
             switch (opcao)
             {
                 case 1:
-                    printf("Informe o nome do PodCast a ser salvo: ");
+                    limpaTela();
+                    printf("Informe o nome do PodCast para ser salvo: ");
                     fgets(nome, 64, stdin);
                     inserirPod(&inicio, nome);
                     break;
                 case 2:
+                    limpaTela();
                     // mostrar();
                     break;
+                case 3:
+                    limpaTela();
+                    break;
                 default:
-                    printf("Opùùo errada.\n");
+                    limpaTela();
+                    printf("OpÁ„o errada.\n");
                     break;
             }
     } while (opcao != 3);
 }
 
-void inserirPod(Lista ** inicio, char nome[])
+void limpaTela()
+{
+    system("cls || clear");
+}
+
+void inserirPod(Lista **inicio, char nome[])
 {
     if(*inicio == NULL)
     {
-        *inicio = malloc(sizeof(No));
+        inicio = malloc(sizeof(No));
+
         (*inicio)->inicio->chave = nome;
         (*inicio)->inicio->proximo = NULL;
         (*inicio)->inicio->proximo = NULL;
@@ -65,6 +84,6 @@ void inserirPod(Lista ** inicio, char nome[])
     }
     else
     {
-        printf("Erro ao alocar memùria.\n");
+        printf("\n\nErro ao alocar memÛria.\n");
     }
 }

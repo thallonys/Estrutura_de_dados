@@ -2,17 +2,16 @@
 #include <stdlib.h>
 
 // Estrutura para árvore
-typedef struct no {
-    int key;
-    struct no * esq, * dir;
+typedef struct noBst {
+    int raiz;
+    struct noBst *esq, *dir;
 } BST;
-
 
 // Estruturas para lista ligada
 typedef struct nolista {
     int qtd;
     BST *arvore;
-    struct nolista * esq, * dir;
+    struct nolista *esq, *dir;
 } NoLista;
 
 typedef struct lista{
@@ -23,4 +22,4 @@ typedef struct lista{
 
 // Protótipos
 void limpaTela();
-void geraQtdArvore(NoLista ** quantidade, int a);
+void geraQtdArvore(NoLista **quantidade, int a);

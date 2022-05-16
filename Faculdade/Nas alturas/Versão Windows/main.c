@@ -5,24 +5,24 @@
 #include "cabecalho.h"
 
 /*
-Para o uso do setlocale, deve-se alterar a configuração do charset nas IDEs no (Ru)Windows manualmente para ISO 8859-1.
-Se o Linux for utilizado, não precisa fazer tal alteração.
+Para o uso do setlocale, deve-se alterar a configuraï¿½ï¿½o do charset nas IDEs no (Ru)Windows manualmente para ISO 8859-1.
+Se o Linux for utilizado, nï¿½o precisa fazer tal alteraï¿½ï¿½o.
 No mac, idem.
 */
 
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese");                            // Seta charset para PT-BR.
+    // setlocale(LC_ALL, "Portuguese");                            // Seta charset para PT-BR.
 
-    srand(time(NULL));                                          // Para números randomicos.
+    srand(time(NULL));                                          // Para nï¿½meros randomicos.
 
     NoLista * quantidade = NULL;                                // Inicializa lista.
-    BST * arvore = NULL;                                        // Inicializa árvore.
+    BST * arvore = NULL;                                        // Inicializa ï¿½rvore.
 
-    // A = quantidade de árvores.
-    // N = quantidade de nós.
-    int A, N;                                                   // Variáveis.
+    // A = quantidade de ï¿½rvores.
+    // N = quantidade de nï¿½s.
+    int A, N;                                                   // Variï¿½veis.
 
     limpaTela();                                                // Limpa tela.
 
@@ -31,10 +31,10 @@ int main()
         limpaTela();
 
         printf("|LinkedList&BST*******************|23|Maio|2022|\n"
-                "|--------------------OPÇÕES--------------------|\n"
+                "|--------------------OPÃ‡Ã•ES--------------------|\n"
                 "|**********************************************|\n"
-                "|* 1 - Quantidade de árvores a serem criadas. *|\n"
-                "|* 0 - Quantidade de nós a serem inseridos.   *|\n"
+                "|* 1 - Quantidade de Ã¡rvores a serem criadas. *|\n"
+                "|* 0 - Quantidade de nÃ³s a serem inseridos.   *|\n"
                 "|* 2 - Sair.                                  *|\n"
                 "|----------------------------------------------|\n"
                 "|**********************************************|\n"
@@ -53,7 +53,7 @@ int main()
                 break;
             default:
                 limpaTela();
-                printf("Opção inválida.\n");
+                printf("Opï¿½ï¿½o invï¿½lida.\n");
         }
     } while (A != 2);
 }
